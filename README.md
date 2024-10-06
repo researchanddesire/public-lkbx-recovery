@@ -6,7 +6,7 @@ Don't worry—it's not the end of the world. This guide will help you recover yo
 
 In this repository, you'll find a functioning LKBX firmware that you can flash to your device to recover it.
 
-## Requirements
+# Requirements
 
 - A computer running Windows, macOS, or Linux
 - A USB-C cable
@@ -16,7 +16,7 @@ In this repository, you'll find a functioning LKBX firmware that you can flash t
 - A bit of technical knowledge
 - A bit of patience
 
-## Instructions
+# Instructions
 
 1. **Clone this repository** to your computer.
 2. **Connect your LKBX** to your computer using a USB-C cable.
@@ -29,9 +29,9 @@ In this repository, you'll find a functioning LKBX firmware that you can flash t
 
 5. **Wait for the flashing process to complete**. Once it's done, your LKBX should be recovered.
 
-## Troubleshooting
+# Troubleshooting
 
-### Error: `firmware.bin` not found
+## Error: `firmware.bin` not found
 
 This error occurs when you've already attempted to flash using the `pio run` command. PlatformIO may have deleted the `firmware.bin` file after flashing, but it's still in the Git history.
 
@@ -43,13 +43,13 @@ git checkout .
 
 This will revert all your local changes and restore the `.pio/build/production/firmware.bin` file.
 
-### Error: The port doesn't exist
+## Error: The port doesn't exist
 
 - **Ensure no other program** is using the serial port. On Windows, you can check this in the Device Manager.
 - **Unplug and replug** the LKBX, or try a different USB port.
 - **Restart your computer** if the issue persists.
 
-### Error: Upload successful but LKBX still not working
+## Error: Upload successful but LKBX still not working
 
 If you erased the flash memory of your LKBX, you'll need to flash the bootloader first.
 
@@ -67,7 +67,7 @@ If you erased the flash memory of your LKBX, you'll need to flash the bootloader
    pio run
    ```
 
-### Error: Serial port not found / No serial data
+## Error: Serial port not found / No serial data
 
 If PlatformIO cannot communicate with your LKBX:
 
