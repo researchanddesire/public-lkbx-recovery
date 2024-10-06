@@ -43,11 +43,20 @@ git checkout .
 
 This will revert all your local changes and restore the `.pio/build/production/firmware.bin` file.
 
-## Error: The port doesn't exist
+## Error: Not responding
+This is a class of errors which may include messages like the following:
+- `The port doesn't exist`
+- `Device reports readiness to read but returned no data`
+- `Serial data stream stopped: Possible serial noise or corruption.`
+- `A fatal error occurred: The chip stopped responding.`
 
-- **Ensure no other program** is using the serial port. On Windows, you can check this in the Device Manager.
+Typically this means some other process is using the serial port.
+
+- **Ensure no other program** is using the serial port. Check all browers, IDE's and terminals.
+- **Make sure no pio processes** are running that might be using the serial port.
 - **Unplug and replug** the LKBX, or try a different USB port.
 - **Restart your computer** if the issue persists.
+- **If this fails**, Proceed to the next section.
 
 ## Error: Upload successful but LKBX still not working
 
@@ -69,11 +78,15 @@ If you erased the flash memory of your LKBX, you'll need to flash the bootloader
 
 ## Error: Serial port not found / No serial data
 
-If PlatformIO cannot communicate with your LKBX:
+If PlatformIO cannot communicate with your LKBX, and you've tried all the troubleshooting steps above, you may need power cycle your LKBX.
 
 - **Power cycle your LKBX** by opening the back of your device and unplugging the battery.
+    - *Note: Doing this may void your warranty. Contact R&D before proceeding*
     - *Note: If you're not comfortable doing this, please don't attempt it.*
-    - Opening your LKBX may void your warranty. 
-- **Contact R&D** for further assistance.
+
+If you are not comfortable power cycling your LKBX, please contact R&D for further assistance.
+
+If you've disconnected the battery and reconnected it, then try following this guide form the top.
+If that still doesn't work, please contact R&D for further assistance.
 
 For support, email: [Support@ResearchAndDesire.com](mailto:Support@ResearchAndDesire.com)
