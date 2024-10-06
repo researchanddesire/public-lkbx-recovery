@@ -13,6 +13,8 @@ In this simple repository, there's a functioning LKBX firmware that you can flas
 - A USB-C cable
 - A LKBX
 - PlatformIO installed on your computer
+- Git installed on your computer
+- A bit of technical knowledge
 - A bit of patience
 
 ## Instructions
@@ -30,7 +32,7 @@ pio run
 
 ## Troubleshooting
 
-### `firmware.bin` not found
+### Error: `firmware.bin` not found
 
 This error happens when you've already attempted to flash using the `pio run -t upload -t nobuild` command.
 Simply, PlatformIO has deleted the `firmware.bin` file after flashing. But it's still in the git history.
@@ -41,19 +43,9 @@ To fix this, run the following command:
 git checkout .
 ```
 
-This will revert all your local changes and restore the `firmware.bin` file.
+This will revert all your local changes and restore the `.pio/build/production/firmware.bin` file.
 
-### Serial port not found / No serial data
-
-It is very likely that if you're in this situation, platformio cannot communicate with your LKBX.
-This can usually be resolved by power cycling your LKBX.
-
-However, this requires opening the back of your device and unplugging the battery. If you're not comfortable doing this, please don't attempt it.
-Contact R&D for further assistance.
-
-Support@ResearchAndDesire.com
-
-### The port doesn't exist
+### Error:  The port doesn't exist
 
 Make sure no other program is using the serial port. If you're on Windows, you can check this in the Device Manager.
 If you're sure no other program is using the serial port, try unplugging and plugging the LKBX back in.
@@ -61,7 +53,7 @@ Or try using a different USB port.
 
 If all else fails, restart your computer.
 
-### Upload Successful but LKBX still not working.
+### Error: Upload Successful but LKBX still not working.
 
 Did you erase the flash memory of your LKBX? If so, you need to flash the bootloader first.
 
@@ -78,3 +70,14 @@ stop the process with Ctrl+C and run the following command to flash the firmware
 ```bash
 pio run
 ```
+
+### Error:  Serial port not found / No serial data
+
+It is very likely that if you're in this situation, platformio cannot communicate with your LKBX.
+This can usually be resolved by power cycling your LKBX.
+
+However, this requires opening the back of your device and unplugging the battery. If you're not comfortable doing this,
+please don't attempt it.
+Contact R&D for further assistance.
+
+Support@ResearchAndDesire.com
