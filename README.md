@@ -62,15 +62,21 @@ Typically this means some other process is using the serial port.
 
 If you erased the flash memory of your LKBX, you'll need to flash the bootloader first.
 
-1. **Install an empty project** to your LKBX:
+1. **Erase the flash memory** of your LKBX by running:
+
+   ```bash
+   pio run -t erase
+   ```
+
+2. **Install an empty project** to your LKBX:
 
    ```bash
    pio run -e bootloader
    ```
 
-2. If you see the message **"LKBX Ready to upload firmware."**, proceed to flash the firmware.
-3. **Stop the process** with `Ctrl+C`.
-4. **Flash the firmware** by running:
+3. If you see the message **"LKBX Ready to upload firmware."**, proceed to flash the firmware.
+4. **Stop the process** with `Ctrl+C`.
+5. **Flash the firmware** by running:
 
    ```bash
    pio run
