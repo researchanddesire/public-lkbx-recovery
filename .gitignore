@@ -1,2 +1,4 @@
-.pio/bootloader
-.pio/esp32-c6-devkitc-1
+.pio/
+.idea/
+.DS_Store
+__pycache__/
